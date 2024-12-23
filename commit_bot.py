@@ -75,7 +75,7 @@ def do_commit_action(commit_message):
     logger.info("Performing commit: %s", commit_message)
 
     # Run git commands; check=True raises a CalledProcessError on failure
-    subprocess.run(["git", "-C", REPO_PATH, "add", COMMIT_FILE_NAME], check=True)
+    subprocess.run(["git", "-C", REPO_PATH, "add", "."], check=True)
     subprocess.run(["git", "-C", REPO_PATH, "commit", "-m", commit_message], check=True)
     subprocess.run(["git", "-C", REPO_PATH, "push"], check=True)
 

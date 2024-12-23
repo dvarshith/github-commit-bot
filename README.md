@@ -46,6 +46,7 @@ Ever wished you had a neat little bot to keep your GitHub streak alive—or just
         from commit_bot import do_commit_action
         do_commit_action("Test commit")
         ```
+     You should see a test commit in your repository.
    - Run the script:
      ```
      python3 commit_bot.py

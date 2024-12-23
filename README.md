@@ -87,7 +87,7 @@ Ever wished you had a neat little bot to keep your GitHub streak alive—or just
 <br/>
 
 ## **Why Use It?**
-- Keep a GitHub streak going even when you’re too busy to code every day.
+- `Keep a GitHub streak going` even when you’re too busy to code every day.
 - Experiment with scheduling commits for educational or demonstration purposes.
 - Practice CI/CD or DevOps workflows in a safe, fun project.
 

@@ -37,7 +37,13 @@ Ever wished you had a neat little bot to keep your GitHub streak alive—or just
 3. Configure the script:
    - Edit the `REPO_PATH` to point to your cloned repo folder.
    - Adjust commit frequency settings, and SNS topic ARN, if you want email alerts.
-4. Test by running:
+4. Configure email address and name:
+   - Run below commands to update email address and name:
+     ```
+     git config --global user.email "example@domain.com"
+     git config --global user.name "Example Name"
+     ```
+5. Test by running:
    - Run the commit method in python shell:
      ```
      python3
@@ -52,7 +58,7 @@ Ever wished you had a neat little bot to keep your GitHub streak alive—or just
      python3 commit_bot.py
      ```
      Leave it running; it will make a commit at a random time.
-5. Deploy as a service (optional but recommended):
+6. Deploy as a service (optional but recommended):
    - Example `Systemd Unit File`
      ```
      [Unit]
@@ -77,7 +83,7 @@ Ever wished you had a neat little bot to keep your GitHub streak alive—or just
      sudo systemctl start commitbot.service
      ```
    - This ensures your bot starts on boot and restarts if it crashes.
-6. Check your commits on GitHub! You should see daily commits and one multi-commit day each week.
+7. Check your commits on GitHub! You should see daily commits and one multi-commit day each week.
 
 ## **Customization**
 - **Time Windows**: If you only want commits between certain hours, modify `random.randint(0, 23)` to a narrower range.

@@ -518,3 +518,23 @@
 2025-01-02 12:40:58,661 [INFO] CommitBot - Performing commit: 2024-12-26T00:01:06.291659 - Multiple commit #21
 2025-01-02 12:40:59,073 [INFO] CommitBot - Commit and push successful: 2024-12-26T00:01:06.291659 - Multiple commit #21
 2025-01-02 13:31:59,089 [INFO] CommitBot - Performing commit: 2025-01-01T00:01:19.015203 - Multiple commit #15
+2025-01-02 13:31:59,475 [ERROR] CommitBot - Unhandled exception: Command '['git', '-C', '/home/ubuntu/github-commit-bot', 'push']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/home/ubuntu/github-commit-bot/commit_bot.py", line 144, in main
+    schedule.run_pending()
+  File "/usr/lib/python3/dist-packages/schedule/__init__.py", line 780, in run_pending
+    default_scheduler.run_pending()
+  File "/usr/lib/python3/dist-packages/schedule/__init__.py", line 100, in run_pending
+    self._run_job(job)
+  File "/usr/lib/python3/dist-packages/schedule/__init__.py", line 172, in _run_job
+    ret = job.run()
+          ^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/schedule/__init__.py", line 661, in run
+    ret = self.job_func()
+          ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/github-commit-bot/commit_bot.py", line 80, in do_commit_action
+    subprocess.run(["git", "-C", REPO_PATH, "push"], check=True)
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', '-C', '/home/ubuntu/github-commit-bot', 'push']' returned non-zero exit status 1.
+2025-01-02 13:32:00,186 [INFO] CommitBot - SNS alert sent: GitHub Commit Bot Failure

@@ -90,6 +90,7 @@ def schedule_today_commits():
 
     today_weekday = datetime.datetime.today().weekday()  # Monday=0, Sunday=6
     schedule.clear()
+    logger.info("Schedule clear. today_weekday: %d", today_weekday)
     if today_weekday == current_random_day:
         number_of_commits = random.randint(MIN_COMMITS_RANDOM_DAY, MAX_COMMITS_RANDOM_DAY)
         logger.info("Today is multi-commit day: scheduling %d commits.", number_of_commits)
@@ -118,7 +119,7 @@ def daily_reset():
     if current_week_number is None or new_week_number != current_week_number:
         current_week_number = new_week_number
         current_random_day = pick_new_random_day()
-        logger.info("New week. random_day set to %d (0=Mon, 6=Sun).", current_random_day)
+        logger.info("New week. random_day set to %d, week_number: %d", current_random_day, current_week_number)
 
     schedule_today_commits()
 

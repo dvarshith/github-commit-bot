@@ -89,6 +89,7 @@ def schedule_today_commits():
     global current_random_day
 
     today_weekday = datetime.datetime.today().weekday()  # Monday=0, Sunday=6
+    schedule.clear()
     if today_weekday == current_random_day:
         number_of_commits = random.randint(MIN_COMMITS_RANDOM_DAY, MAX_COMMITS_RANDOM_DAY)
         logger.info("Today is multi-commit day: scheduling %d commits.", number_of_commits)
@@ -142,7 +143,7 @@ def main():
         # Main loop
         while True:
             schedule.run_pending()
-            time.sleep(60)
+            time.sleep(30)
 
     except Exception as e:
         logger.error("Unhandled exception: %s", e, exc_info=True)

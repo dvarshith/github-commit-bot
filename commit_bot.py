@@ -101,7 +101,7 @@ def schedule_today_commits():
                 do_commit_action, commit_message=(f"{datetime.datetime.now().isoformat()} - Multiple commit #{i+1}")
             )
     else:
-        logger.info("Today is single-commit day.")
+        logger.info("Today is single-commit day: schedluing 1 commit.")
         hour = random.randint(0, 23)
         minute = random.randint(0, 59)
         schedule.every().day.at(f"{hour:02d}:{minute:02d}").do(

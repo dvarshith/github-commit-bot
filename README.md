@@ -1,6 +1,8 @@
 # **GitHub Commit Bot**
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+
 <br/>
+
 Ever wished you had a neat little bot to keep your GitHub streak alive—or just to have some fun with automated commits? `GitHub Commit Bot` is a Python-based tool that automatically makes daily commits to your repository at random times. Plus, it picks one random day each week to push multiple commits instead of just one, giving your commit history a bit more of a random, natural look.
 
 <br/>
